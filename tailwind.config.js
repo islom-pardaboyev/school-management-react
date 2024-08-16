@@ -16,7 +16,11 @@ export default {
         },
         primary: {
           DEFAULT: "#667085",
-          5:"#2D88D4"
+          5:"#2D88D4",
+          10: "#152259",
+          15: "#BDBDBD",
+          20: '#509CDB',
+          30: "#EFF3FA"
         }
       },
     },
