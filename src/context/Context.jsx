@@ -20,7 +20,10 @@ function Context({ children }) {
   };
 
   const removeTeacher = (id) => {
-    setTeachersArray((prev) => prev.filter((teacher) => teacher.id !== id));
+    const newTeachersArray = teachersArray.filter(
+      (teacher) => teacher.id !== id
+    );
+    setTeachersArray([...newTeachersArray]);
   };
 
   window.localStorage.setItem("isLogin", JSON.stringify(isLogin));
@@ -31,11 +34,11 @@ function Context({ children }) {
         isLogin,
         setIsLogin,
         showIsLogOutModal,
+        removeTeacher,
         LogOut,
         setShowIsLogOutModal,
         teachersArray,
         setTeachersArray,
-        removeTeacher
       }}
     >
       {children}

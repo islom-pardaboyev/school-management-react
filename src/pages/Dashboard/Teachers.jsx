@@ -1,12 +1,13 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import Title from "../../component/Title";
 import TeacherCart from "../../component/TeacherCart";
 import { MainContext } from "../../context/Context";
-import SearchInput from "../../component/SearchInput";
 import EmptyImg from "../../assets/images/empty-array.png";
 import TableHeading from "../../component/TableThead";
 import { Link } from "react-router-dom";
 import HeaderTop from "../../component/HeaderTop";
+import { SearchIcon } from "../../assets/images/Icon";
+import Input from "../../component/Input";
 
 function Teachers() {
   const tableThead = [
@@ -35,12 +36,17 @@ function Teachers() {
       title: "Actions",
     },
   ];
-  const {
-    showIsLogOutModal,
-    setShowIsLogOutModal,
-    teachersArray,
-    setTeachersArray,
-  } = useContext(MainContext);
+  const { teachersArray: initialTeachersArray } = useContext(MainContext);
+  const [teachersArray, setTeachersArray] = useState(initialTeachersArray);
+
+  function searchFromArray(e) {
+    const value = e.target.value;
+    const findedArray = initialTeachersArray.filter(
+      (teacher) =>
+        teacher.fullName.includes(value) || teacher.email.includes(value)
+    );
+    setTeachersArray(findedArray);
+  }
 
   return (
     <div className="mx-[32px] h-screen overflow-y-auto">
@@ -59,7 +65,16 @@ function Teachers() {
           Add Teachers
         </Link>
       </header>
-      <SearchInput />
+      <div className="bg-gray-5 py-4 pl-4 pr-5 flex items-center">
+        <SearchIcon />
+        <Input
+          onInput={(e) => searchFromArray(e)}
+          name={"valueInput"}
+          placeholder={"Search for a student by name or email"}
+          type={"text"}
+          extraStyle={"bg-transparent border-none"}
+        />
+      </div>
       <div className="mt-[30px]">
         {teachersArray.length ? (
           <div className="relative overflow-x-auto">
@@ -72,8 +87,8 @@ function Teachers() {
                 </tr>
               </thead>
               <tbody>
-                {teachersArray.map((teacher) => (
-                  <TeacherCart key={teacher.id} teacher={teacher} />
+                {teachersArray.map((teacher, index) => (
+                  <TeacherCart key={index + 1} teacher={teacher} />
                 ))}
               </tbody>
             </table>

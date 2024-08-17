@@ -6,8 +6,10 @@ import { MainContext } from "../context/Context";
 import { Link } from "react-router-dom";
 
 function TeacherCart({ teacher }) {
-  const { removeTeacher } = useContext(MainContext);
+  const { removeTeacher } =
+    useContext(MainContext);
   const { fullName, email, subject, classes, gender, imgSrc, id } = teacher;
+
   return (
     <tr className="even:bg-[#EBF6FF80]">
       <th
@@ -45,7 +47,9 @@ function TeacherCart({ teacher }) {
             <LuMoreHorizontal className="cursor-pointer" />
           </Link>
           <FaTrash
-            onClick={() => removeTeacher(id)}
+            onClick={() => {
+              removeTeacher(id);
+            }}
             className="text-rose-600 cursor-pointer"
           />
           <Link to={`/teachers/update/${id}`}>

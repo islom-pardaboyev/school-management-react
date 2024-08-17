@@ -62,7 +62,7 @@ function Navbar() {
           }
         />
       </div>
-      <nav className="px-7 text-white">
+      <nav className="px-7 text-white flex flex-col gap-[116px]">
         <ul className="flex flex-col gap-2">
           {navbar.map((navItem) => (
             <li key={navItem.id}>
@@ -79,6 +79,19 @@ function Navbar() {
               </NavLink>
             </li>
           ))}
+        </ul>
+        <ul>
+          <li>
+            <NavLink to={'/features'} className={'py-3 px-4 rounded flex items-center justify-between'}>
+              <div className="flex items-center gap-4">
+                <BillingIcon />
+                <p className="font-kubmh font-semibold leading-[17.36px] text-sm">
+                  Features
+                </p>
+              </div>
+              <p className="uppercase text-[10px] bg-primary-40 rounded-lg text-black px-2 py-px leading-[12.4px] font-semibold font-kubmh">new</p>
+            </NavLink>
+          </li>
         </ul>
       </nav>
     </aside>

@@ -4,6 +4,7 @@ import {
   Billing,
   Dashboard,
   Exam,
+  Features,
   Settings,
   Students,
   Teachers,
@@ -42,6 +43,7 @@ export default function DashboardPage() {
           <Route path="/settings" element={<Settings />} />
           <Route path="/billing" element={<Billing />} />
           <Route path="/exams" element={<Exam />} />
+          <Route path="/features" element={<Features />} />
         </Routes>
       </div>
       <CustomModal

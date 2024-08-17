@@ -22,7 +22,7 @@ export default {
           15: "#BDBDBD",
           20: '#509CDB',
           30: "#EFF3FA",
-      
+          40: '#B9D7F1'
         }
       },
     },

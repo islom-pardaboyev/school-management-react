@@ -56,7 +56,7 @@ export default function About() {
           <h1 className="font-kubmh font-semibold leading-[19.84px] text-base text-gray-800">
             About
           </h1>
-          <p className="text-gray-100 mb-[30px] mt-4 max-w-[335px] font-kubmh font-medium leading-[21px] text-base">
+          <p className="text-gray-100 mb-[30px] mt-4 max-w-[335px] minf-w-[335px] font-kubmh font-medium leading-[21px] text-base">
             {about}
           </p>
           <div className="flex items-center justify-between">
