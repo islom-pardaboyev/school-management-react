@@ -40,10 +40,10 @@ function Teachers() {
   const [teachersArray, setTeachersArray] = useState(initialTeachersArray);
 
   function searchFromArray(e) {
-    const value = e.target.value;
+    const value = e.target.value.toLowerCase();
     const findedArray = initialTeachersArray.filter(
       (teacher) =>
-        teacher.fullName.includes(value) || teacher.email.includes(value)
+        teacher.fullName.toLowerCase().includes(value) || teacher.email.toLowerCase().includes(value)
     );
     setTeachersArray(findedArray);
   }

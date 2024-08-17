@@ -6,9 +6,15 @@ import { MainContext } from "../context/Context";
 import { Link } from "react-router-dom";
 
 function TeacherCart({ teacher }) {
-  const { removeTeacher } =
+  const { teachersArray, setTeachersArray } =
     useContext(MainContext);
   const { fullName, email, subject, classes, gender, imgSrc, id } = teacher;
+  const removeTeacher = (id) => {
+    const newTeachersArray = teachersArray.filter(
+      (teacher) => teacher.id !== id
+    );
+    setTeachersArray([...newTeachersArray]);
+  };
 
   return (
     <tr className="even:bg-[#EBF6FF80]">
