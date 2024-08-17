@@ -7,6 +7,7 @@ import {
   Settings,
   Students,
   Teachers,
+  UpdateTeachers,
 } from "../../pages/Dashboard";
 import Navbar from "../../component/Navbar/Navbar";
 import CustomModal from "../../component/CustomModal";
@@ -16,7 +17,7 @@ import TeacherAdd from "../../pages/Dashboard/TeacherAdd";
 
 export default function DashboardPage() {
   const { showIsLogOutModal, setShowIsLogOutModal } = useContext(MainContext);
-  const navigate = useNavigate(); // useNavigate hookini chaqiramiz
+  const navigate = useNavigate();
 
   const logout = () => {
     setShowIsLogOutModal(false);
@@ -35,7 +36,8 @@ export default function DashboardPage() {
           <Route path="/" element={<Dashboard />} />
           <Route path="/teachers" element={<Teachers />} />
           <Route path="/teachers/add" element={<TeacherAdd />} />
-          <Route path="/teachers/about/:id" element={<About />} />
+          <Route path="/teachers/:id" element={<About />} />
+          <Route path="/teachers/update/:id" element={<UpdateTeachers />} />
           <Route path="/students" element={<Students />} />
           <Route path="/settings" element={<Settings />} />
           <Route path="/billing" element={<Billing />} />

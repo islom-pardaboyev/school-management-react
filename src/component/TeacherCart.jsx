@@ -9,7 +9,7 @@ function TeacherCart({ teacher }) {
   const { removeTeacher } = useContext(MainContext);
   const { fullName, email, subject, classes, gender, imgSrc, id } = teacher;
   return (
-    <tr className=" border-b border-black/30 even:bg-[#EBF6FF80]">
+    <tr className="even:bg-[#EBF6FF80]">
       <th
         scope="row"
         className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap"
@@ -22,23 +22,35 @@ function TeacherCart({ teacher }) {
             src={imgSrc}
             alt=""
           />
-          <h1>{fullName}</h1>
+          <h1 className="leading-[14.88px] text-xs font-medium font-kubmh text-gray-400">
+            {fullName}
+          </h1>
         </div>
       </th>
-      <td className="px-6 py-4 capitalize">{subject}</td>
-      <td className="px-6 py-4 capitalize">{classes}</td>
-      <td className="px-6 py-4">{email}</td>
-      <td className="px-6 py-4 capitalize">{gender}</td>
+      <td className="px-6 py-4 capitalize leading-[14.88px] text-xs font-medium font-kubmh text-gray-400">
+        {subject}
+      </td>
+      <td className="px-6 py-4 capitalize leading-[14.88px] text-xs font-medium font-kubmh text-gray-400">
+        {classes}
+      </td>
+      <td className="px-6 py-4 leading-[14.88px] text-xs font-medium font-kubmh text-gray-400">
+        {email}
+      </td>
+      <td className="px-6 py-4 capitalize leading-[14.88px] text-xs font-medium font-kubmh text-gray-400">
+        {gender}
+      </td>
       <td className="px-6 py-4">
         <div className="flex items-center gap-3">
-          <Link to={`/teachers/about/${id}`}>
+          <Link to={`/teachers/${id}`}>
             <LuMoreHorizontal className="cursor-pointer" />
           </Link>
           <FaTrash
             onClick={() => removeTeacher(id)}
             className="text-rose-600 cursor-pointer"
           />
-          <MdEdit className="text-green-600 cursor-pointer" />
+          <Link to={`/teachers/update/${id}`}>
+            <MdEdit className="text-green-600 cursor-pointer" />
+          </Link>
         </div>
       </td>
     </tr>

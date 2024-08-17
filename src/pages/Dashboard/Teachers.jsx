@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import Title from "../../component/Title";
-import TeacherCart from '../../component/TeacherCart'
+import TeacherCart from "../../component/TeacherCart";
 import { MainContext } from "../../context/Context";
 import SearchInput from "../../component/SearchInput";
 import EmptyImg from "../../assets/images/empty-array.png";
@@ -62,9 +62,9 @@ function Teachers() {
       <SearchInput />
       <div className="mt-[30px]">
         {teachersArray.length ? (
-          <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
+          <div className="relative overflow-x-auto">
             <table className="w-full text-sm text-left ">
-              <thead className="text-xs border-b uppercase ">
+              <thead className=" ">
                 <tr>
                   {tableThead.map((title) => (
                     <TableHeading key={title.id} title={title.title} />
@@ -72,9 +72,9 @@ function Teachers() {
                 </tr>
               </thead>
               <tbody>
-                
-                {teachersArray.map(teacher => <TeacherCart key={teacher.id} teacher={teacher}/>)}
-             
+                {teachersArray.map((teacher) => (
+                  <TeacherCart key={teacher.id} teacher={teacher} />
+                ))}
               </tbody>
             </table>
           </div>

@@ -9,7 +9,7 @@ function CustomModal({ showIsLogOutModal, setShowIsLogOutModal, children }) {
         showIsLogOutModal ? "scale-100" : "scale-0"
       }`}
     >
-      <div className='w-[400px] h-[300px] rounded-md bg-white shadow-2xl'>
+      <div className='w-[500px] h-[300px] rounded-md bg-white shadow-2xl'>
         {children}
       </div>
     </div>

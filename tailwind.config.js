@@ -13,6 +13,7 @@ export default {
           100: '#A7A7A7',
           200: '#8A8A8A',
           400: "#4F4F4F",
+          800: '#1A1A1A'
         },
         primary: {
           DEFAULT: "#667085",

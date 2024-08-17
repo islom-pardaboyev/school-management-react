@@ -111,7 +111,7 @@ function TeacherAdd() {
         </header>
         <div className="mt-6 grid grid-cols-12 gap-[50px]">
           <div className="col-span-6 flex flex-col gap-[36px]">
-            {/* Full Name Field */}
+
             <label className="flex flex-col gap-[5px]">
               <Description
                 extraStyle={
@@ -127,7 +127,7 @@ function TeacherAdd() {
               />
             </label>
 
-            {/* Email Address Field */}
+
             <label className="flex flex-col gap-[5px]">
               <Description
                 extraStyle={
@@ -143,7 +143,7 @@ function TeacherAdd() {
               />
             </label>
 
-            {/* Subject Dropdown */}
+
             <label className="flex flex-col gap-[5px]">
               <Description
                 extraStyle={
@@ -167,7 +167,7 @@ function TeacherAdd() {
               </select>
             </label>
 
-            {/* About Field */}
+
             <label className="flex flex-col gap-[5px]">
               <Description
                 extraStyle={
@@ -186,7 +186,7 @@ function TeacherAdd() {
           </div>
 
           <div className="col-span-6 flex flex-col gap-[36px]">
-            {/* Class Dropdown */}
+            
             <label className="flex flex-col gap-[5px]">
               <Description
                 extraStyle={
@@ -210,7 +210,7 @@ function TeacherAdd() {
               </select>
             </label>
 
-            {/* Gender Dropdown */}
+            
             <label className="flex flex-col gap-[5px]">
               <Description
                 extraStyle={
@@ -234,7 +234,7 @@ function TeacherAdd() {
               </select>
             </label>
 
-            {/* Age Field */}
+            
             <label className="flex flex-col gap-[5px]">
               <Description
                 extraStyle={
@@ -245,7 +245,7 @@ function TeacherAdd() {
               <Input required name="age" placeholder="Age" type="number" />
             </label>
 
-            {/* Image Upload */}
+
             <label className="flex flex-col gap-4">
               <Description
                 extraStyle={
