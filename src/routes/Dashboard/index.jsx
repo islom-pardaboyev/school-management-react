@@ -1,5 +1,6 @@
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useNavigate } from "react-router-dom";
 import {
+  About,
   Billing,
   Dashboard,
   Exam,
@@ -11,17 +12,19 @@ import Navbar from "../../component/Navbar/Navbar";
 import CustomModal from "../../component/CustomModal";
 import { useContext } from "react";
 import { MainContext } from "../../context/Context";
-
+import TeacherAdd from "../../pages/Dashboard/TeacherAdd";
 
 export default function DashboardPage() {
   const { showIsLogOutModal, setShowIsLogOutModal } = useContext(MainContext);
+  const navigate = useNavigate(); // useNavigate hookini chaqiramiz
 
   const logout = () => {
     setShowIsLogOutModal(false);
     setTimeout(() => {
       window.localStorage.clear();
+      navigate("/");
       window.location.reload();
-    }, 700);
+    }, 1200);
   };
 
   return (
@@ -31,6 +34,8 @@ export default function DashboardPage() {
         <Routes>
           <Route path="/" element={<Dashboard />} />
           <Route path="/teachers" element={<Teachers />} />
+          <Route path="/teachers/add" element={<TeacherAdd />} />
+          <Route path="/teachers/about/:id" element={<About />} />
           <Route path="/students" element={<Students />} />
           <Route path="/settings" element={<Settings />} />
           <Route path="/billing" element={<Billing />} />
@@ -41,10 +46,13 @@ export default function DashboardPage() {
         showIsLogOutModal={showIsLogOutModal}
         setShowIsLogOutModal={setShowIsLogOutModal}
       >
-        <div>Are you sure you want to log out?</div>
-        <button onClick={() => setShowIsLogOutModal(false)}>No</button>
-        
-        <button onClick={logout}>Yes</button>
+        <div className="flex flex-col items-center h-full justify-evenly">
+          <h1 className="font-kubmh text-2xl font-medium">Are you sure you want to log out?</h1>
+          <div className="flex items-center gap-3">
+            <button className="bg-rose-500 hover:bg-rose-700 text-white px-4 py-2 rounded-md" onClick={() => setShowIsLogOutModal(false)}>No</button>
+            <button className="bg-sky-500 hover:bg-sky-700 text-white px-4 py-2 rounded-md" onClick={logout}>Yes</button>
+          </div>
+        </div>
       </CustomModal>
     </div>
   );
