@@ -26,7 +26,7 @@ export default function DashboardPage() {
       window.localStorage.clear();
       navigate("/");
       window.location.reload();
-    }, 1200);
+    }, 300);
   };
 
   return (
@@ -51,10 +51,10 @@ export default function DashboardPage() {
         setShowIsLogOutModal={setShowIsLogOutModal}
       >
         <div className="flex flex-col items-center h-full justify-evenly">
-          <h1 className="font-kubmh text-2xl font-medium">Are you sure you want to log out?</h1>
+          <h1 className="text-2xl font-medium font-kubmh">Are you sure you want to log out?</h1>
           <div className="flex items-center gap-3">
-            <button className="bg-rose-500 hover:bg-rose-700 text-white px-4 py-2 rounded-md" onClick={() => setShowIsLogOutModal(false)}>No</button>
-            <button className="bg-sky-500 hover:bg-sky-700 text-white px-4 py-2 rounded-md" onClick={logout}>Yes</button>
+            <button className="px-4 py-2 text-white rounded-md bg-rose-500 hover:bg-rose-700" onClick={() => setShowIsLogOutModal(false)}>No</button>
+            <button className="px-4 py-2 text-white rounded-md bg-sky-500 hover:bg-sky-700" onClick={logout}>Yes</button>
           </div>
         </div>
       </CustomModal>

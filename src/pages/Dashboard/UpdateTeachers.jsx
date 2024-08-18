@@ -264,7 +264,7 @@ function TeacherAdd() {
                   src={imgSrc}
                   alt="Teacher"
                 />
-                <div className="absolute group-hover:top-0 -top-full duration-300 left-0 w-full h-full backdrop-blur-sm bg-black/30 flex items-center justify-center text-white">
+                <div className="absolute left-0 flex items-center justify-center w-full h-full text-white group-hover:top-0 -top-full duration-300 backdrop-blur-sm bg-black/30">
                   <FaXmark
                     className="text-3xl cursor-pointer"
                     onClick={() => setImgSrc("")}

@@ -65,7 +65,7 @@ function Teachers() {
           Add Teachers
         </Link>
       </header>
-      <div className="bg-gray-5 py-4 pl-4 pr-5 flex items-center">
+      <div className="flex items-center py-4 pl-4 pr-5 bg-gray-5">
         <SearchIcon />
         <Input
           onInput={(e) => searchFromArray(e)}
@@ -79,7 +79,7 @@ function Teachers() {
         {teachersArray.length ? (
           <div className="relative overflow-x-auto">
             <table className="w-full text-sm text-left ">
-              <thead className=" ">
+              <thead className="">
                 <tr>
                   {tableThead.map((title) => (
                     <TableHeading key={title.id} title={title.title} />

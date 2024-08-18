@@ -32,7 +32,7 @@ export default function About() {
             height={280}
             alt="user img"
           />
-          <div className="flex flex-col mb-10 items-center">
+          <div className="flex flex-col items-center mb-10">
             <h1 className="font-kubmh font-bold text-base leading-[19.84px] text-gray-800">
               {fullName}
             </h1>
@@ -40,7 +40,7 @@ export default function About() {
               {subject} teacher
             </p>
           </div>
-          <div className="flex items-center gap-6 justify-center">
+          <div className="flex items-center justify-center gap-6">
             <p className="p-[11px] text-gray-200 rounded-lg bg-primary-30">
               <EducationIcon />
             </p>

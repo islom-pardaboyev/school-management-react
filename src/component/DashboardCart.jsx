@@ -6,7 +6,7 @@ function DashboardCart({ cart }) {
   const { Icon, title, desc } = cart;
   return (
     <div className="flex items-start gap-5">
-      <div className="p-2 bg-primary-30 rounded-lg">{Icon && <Icon />}</div>
+      <div className="p-2 rounded-lg bg-primary-30">{Icon && <Icon />}</div>
       <div className="flex flex-col gap-4">
         <Title
           title={title}

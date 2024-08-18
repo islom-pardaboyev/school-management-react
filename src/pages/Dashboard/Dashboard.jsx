@@ -11,7 +11,7 @@ import DashboardCart from "../../component/DashboardCart";
 import Title from "../../component/Title";
 import { MainContext } from "../../context/Context";
 
-function Dashboard() {
+function  Dashboard() {
   const { showIsLogOutModal, setShowIsLogOutModal } = useContext(MainContext);
   const carts = [
     {
@@ -35,7 +35,7 @@ function Dashboard() {
   ];
   
   return (
-    <div className=" overflow-y-auto h-screen">
+    <div className="h-screen overflow-y-auto ">
       <header className="flex items-center mb-[53px] px-[124px] py-[15px] bg-gray-5 justify-between">
         <div className="flex flex-col mt-[29px]">
           <p className="font-kubmh font-medium leading-[19.84px] text-base">

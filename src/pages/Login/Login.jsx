@@ -55,7 +55,7 @@ function Login() {
   }
 
   return (
-    <div className="flex items-center h-screen justify-center bg-gray-5">
+    <div className="flex items-center justify-center h-screen bg-gray-5">
       <div>
         <HeadingTitle title={"Welcome, Log into you account"} />
         <form

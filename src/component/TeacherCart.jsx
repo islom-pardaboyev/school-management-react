@@ -26,7 +26,7 @@ function TeacherCart({ teacher }) {
           <img
             width={24}
             height={24}
-            className="rounded-full object-cover"
+            className="object-cover rounded-full"
             src={imgSrc}
             alt=""
           />
@@ -56,7 +56,7 @@ function TeacherCart({ teacher }) {
             onClick={() => {
               removeTeacher(id);
             }}
-            className="text-rose-600 cursor-pointer"
+            className="cursor-pointer text-rose-600"
           />
           <Link to={`/teachers/update/${id}`}>
             <MdEdit className="text-green-600 cursor-pointer" />
